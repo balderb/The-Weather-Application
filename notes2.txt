@@ -40,6 +40,8 @@ Now we are going to add another method inside the async.js
 
 http.send();
 
+this "http.send();" is a method
+
 We ask it to prepare the data and bring it all the way back at us.
 
 Now, where is the data and what can we really do with it?
