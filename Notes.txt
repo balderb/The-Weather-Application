@@ -59,7 +59,28 @@ let's take a look at the three of them!
 https://www.youtube.com/watch?v=h0ZUpPiV1ac&t=9s
 
 In this tutorial we will talk about how we actually go out and grab data. 
-And we do that by making AJAX requests. And 
+And we do that by making AJAX requests. AJAX requests in 3 steps: 
+
+- Communicate with a server by making a http request
+- No need to reload the page
+- Stands for: "Asynchronous Javascript and XML"
+
+(own sidenote: let's look into the difference between AJAX and JSON at a later time)
+
+for example: map where you can zoom in our out, or plot things on it, that is probably gonna use AJAX
+HTTP request to update that map on the fly without ever having to refresh the page.
+
+So AJAX stands for Asynchronous JavaScript and XML. XML part is the data that we are retrieving.
+Although, honestly, we're probably gonna be using JSON these days which is a data fallout a lot more suited to javascript
+than xml is.
+
+How can we make http requests -> stepwise in notes2.txt
+
+
+
+
+
+
 
 
 
