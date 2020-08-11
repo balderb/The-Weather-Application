@@ -1,9 +1,9 @@
 
-window.onload = function () {
+// window.onload = function () {
     
-    var hhtp = new XMLHttpRequest();
+//    var hhtp = new XMLHttpRequest();
     
-};
+// };
 
 /*  READY STATES
 
@@ -14,6 +14,8 @@ window.onload = function () {
 4 - request is complete
 
 */
+console.log('about to fetch a rainbow'); 
+fetch('rainbow.jpg')
 
 
 

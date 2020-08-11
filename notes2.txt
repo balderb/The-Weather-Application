@@ -109,7 +109,38 @@ But in this example we just want to look at a simple get request with fetch.
 
 Now, what is our program gonna do: 
 
-1. call the fetch function + give it a singe argument which is the path of the resource.
+1. Call the fetch function + give it a singe argument which is the path of the resource.
+So in this case the path of the resource is gonna be a file, and the file is going to be a local file in this case, called weather.json
+like this: call fetch (weather.json);
+
+2 in the second thing we're gonna look at the response. This involved the idea of a promise. And fetch function is a 
+function that happens asynchronously, meaning we call fetch but some time passes because it takes some time to retrieve that data.
+So how we get the response as part of a promise is a detail that i'm going to have to look at specifically once we get into the code.
+
+The response is actually a stream of data. So we get the response but we need a whole other step, because we need to read
+that data to sort of like complete that data and store it in a format that we can work with.
+
+the format can be: text, blob(img), array buffer, JSON(javascript object notation)
+
+And that last format, the javaScript object notation is going to be a format for storing data that we're going to see again
+and again and again. But in this case, we want to get it as a blob.
+
+
+3. This third stepp we can call it the complete data stream. And what we mean with it is, to complete and grab the data
+that is in the body of the response. So this concept of the response body which is pretty important, which is where the data
+actually is. But it should be noted that there is lots of other metadata about the network communication that's in the response
+as well, that you could look at in certain circumstances.
+
+So once we've done that, we've completed the data stream, we've got the image blob 
+
+4 than we can just make an img html dom element with that data.
+
+These 4 steps are the steps for this example and now we can just go and code this.
+
+
+ 
+
+
 
 
 
