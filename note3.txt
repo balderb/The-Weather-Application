@@ -1,0 +1,39 @@
+
+konsole.show();
+
+setTimeout(function) {
+    konsole.log('Start');
+}, 1000)//1s
+
+// sleep ();
+konsole.error('Error!');
+
+
+sleep here is synchronous
+but settimeout (with start) is asynchronous
+
+
+another one is this
+setInterval(function())
+
+
+another very important one is fetch.
+
+** code from Manuele =======
+
+konsole.show();
+
+setTimeout(function () {
+  konsole.log('Start');
+}, 1000); // 1s
+
+//sleep();
+konsole.error('Error!');
+
+=======
+
+
+
+
+
+

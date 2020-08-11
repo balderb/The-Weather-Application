@@ -62,6 +62,26 @@ Now, we do have different ready states inside of this object, as we go through t
 
 Ready state 0 means that the request has not been initialized yet. etc..(we've got the object but it hasn't been initialized yet)
 Ready state 1 means it's been set up, like on line 37.
+Ready state 2
+Ready state 3
+etc.. (look above)
+
+What we want to do is listen out when these changes through the states are being made. 
+We can do that like this:
+
+http.onreadystatechange = function(){
+    console.log(http);
+};
+
+We'll do it and get 4 items back in the console.
+
+What we now want to do is put a listener on it for when the ready state has got value 4. And we can do that by giving it a 
+simple "if" check like this: 
+
+if(http.readyState == 4 && http.status == 200) {
+
+}
+
 
 
 
