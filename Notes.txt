@@ -12,9 +12,22 @@ Example:
 - var article = readSync(article_log);
     console.log(article);
 
-var authors = readSync(authors_loc);
+- var authors = readSync(authors_loc);
     console.log(authors);
 
 We wonder what happens if article_log is extremely large and takes 10 seconds to read(?)
-This way we would block our code right there. 
+This way we would block our code right there and it hangs there for that amount of time.
+To avoid that -> use asynchronous code to combat this.
+
+A better example: 
+
+- readAsync(article_log, function(){
+    console.log(article);
+});
+
+- readAsync(authors_log, function(){
+    console.log(authors);
+});
+
+
 
