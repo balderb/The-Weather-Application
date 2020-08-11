@@ -1,3 +1,5 @@
+I Create an account on OpenWeather, and generated a key
+
 *** notes on synchronous and asynchronous code
 
 https://www.youtube.com/watch?v=YxWMxJONp7E
