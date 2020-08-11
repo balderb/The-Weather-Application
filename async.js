@@ -1,4 +1,10 @@
 
+window.onload = function () {
+    
+    var hhtp = new XMLHttpRequest();
+    
+};
+
 /*  READY STATES
 
 0 - request not initialized
@@ -8,6 +14,11 @@
 4 - request is complete
 
 */
+
+
+
+
+
 
 
 

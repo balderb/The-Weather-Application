@@ -1,4 +1,51 @@
-**Stepwise
+
+** Stepwise
 
 We will work together (and explain) with the index.html file.
+
+we're gonna start writing javascript
+
+There's basically two ways of doing it. 
+We can use the Vanilla Javascript to do it + the JQuery way of making these requests.
+
+Let's start writing inside the async.js file
+
+
+example: var hhtp = new XMLHttpRequest();
+
+The "XMLHttpRequest" is an object which is supported in all modern browsers. It allows us to to an http request and get data back from a server.
+So, we are gonna be using this. And now it stored in the varable http.
+
+How do we make requests? -> by using a few different methods on this http variable now. 
+
+The first method: the open method. it sets up the request for us. It tells javascript where we want to get the data from + the type
+of request we want to make and whether we want it to be asynchronous or synchronous.
+
+the way we do this is by saying: http.open()
+
+And the first thing we need to pass in, is the type request. Which is gonna be the GET request. 
+
+http.open("GET")
+
+After that, we look at the data that we need (so pass through, the url of the data that we want to retrieve)), so in this case we're gonna look inside of our already created data folder.
+
+http.open("GET", "data/weather.json")
+
+The third parameter is the boolean where we tell wheather we want this to be synchronous or asynchronous.
+In this case we go for 'true' since we really want it to be asynchronous.
+
+http.open("GET", "data/weather.json", true)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
