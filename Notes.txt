@@ -31,15 +31,21 @@ A better example:
 
 In these examplex we go over more "asynchronous versions" of doing the -> very same thing.
 This time we use an api with a function called "readAsync" and this time it's gonna go and grab something asynchronously.
+
 What this is doing: perform some kind of "request" whereby it says: whe're gonna pass authors_log into 
 a seperate thread, you go out and get that data right now and than just carry on with my thread through the code
 and carry on to the next function. And when the article_log gets back and returns with the data, than we can fire this callback
 function right after it which is gonna log it to the article with console.log(article);
+
 So -> no longer are we waiting in line for "readAsync(article_log, function()" to be fully read before we move on to the next one.
 So what we do is pass the "article_log" on to a seperate thread and te code thread is moving on to the next function. 
 
 We said, though, that javascript only runs on 1 thread. And the distinction is this: javascript that you write only runs on one thread
 but requests such as "readAsync(article_log, function()" are handed off to a seperate threat which runs offside the javascript thread.
-that frees up the javascript of moving up to other things
+that frees up the javascript of moving up to other things.
+
+Actually -> this is just one way to 
+
+
 
 
