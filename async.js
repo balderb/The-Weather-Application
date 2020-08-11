@@ -14,10 +14,14 @@
 4 - request is complete
 
 */
-console.log('about to fetch a rainbow'); 
-fetch('rainbow.jpg')
 
-
+console.log('About to fetch a rainbow'); 
+fetch('rainbow.jpg').then(response => {
+    console.log(response);
+    return response.blob();
+}).then(response => {
+    console.log(response);
+});
 
 
 

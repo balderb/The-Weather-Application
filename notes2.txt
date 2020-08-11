@@ -137,6 +137,8 @@ So once we've done that, we've completed the data stream, we've got the image bl
 
 These 4 steps are the steps for this example and now we can just go and code this.
 
+1. Go work in 1 html and a js file, linked to that former html file.
+
 
  
 
