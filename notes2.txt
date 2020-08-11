@@ -49,8 +49,10 @@ Now, where is the data and what can we really do with it?
 To demonstrate it, let's log the 'http' object to the console. 
 to do that we do "console.log(http);"
 
-Now, this http object has been send back to us, and this has a ready state of 1.
-Now, we do have different ready states inside of this object, as we go through the .send request. remember from the file async.js in the comment section?
+Now, this http object has been returned back to us, and this has a ready state of 1.
+Now, we do have different ready states of of this object, as we go through the ".send" request. 
+
+Remember from the file async.js in the comment section?
 
 /*  READY STATES
 
@@ -66,9 +68,12 @@ Ready state 0 means that the request has not been initialized yet. etc..(we've g
 Ready state 1 means it's been set up, like on line 37.
 Ready state 2
 Ready state 3
-etc.. (look above)
+Ready state 4 when the request is complete
 
-What we want to do is listen out when these changes through the states are being made. 
+It is at point 4 that we can actually use the data that had been returned to us.
+
+So really what we want to do is listen for when the ready state is 4. What we want to do is listen out when these changes through the states are being made. 
+
 We can do that like this:
 
 http.onreadystatechange = function(){
@@ -81,9 +86,30 @@ What we now want to do is put a listener on it for when the ready state has got 
 simple "if" check like this: 
 
 if(http.readyState == 4 && http.status == 200) {
+    if (http.readystate == 4 && http.status == 200) {
+        // here we'll do something with the data
 
-}
+            console.log(JSON.parse(http.response));
 
+    }
+};
+
+
+// from here we switch to the code train on youtube
+// https://www.youtube.com/watch?v=tc8DU14qX6I
+
+The best way to learn all of the details about fetch web API's is on the Mozilla Developer mdn web docs
+
+There is this idea of making a 'request' = an http request or hypertext transfer protocol request.
+We could make a get request, saying like 'will you please -- could i please get some information. but
+we can also make a 'post request', could i please send you some information to you. Now we're gonna do 
+both of these kind of requests and fetch can actually both retrieve and send. 
+
+But in this example we just want to look at a simple get request with fetch.
+
+Now, what is our program gonna do: 
+
+1. call the fetch function + give it a singe argument which is the path of the resource.
 
 
 
