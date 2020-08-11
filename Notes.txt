@@ -1,0 +1,20 @@
+*** notes on synchronous and asynchronous code
+
+https://www.youtube.com/watch?v=YxWMxJONp7E
+
+
+Javascript code runs on a single threat (can do 1 thing at a time)
+
+synchronous code waits for 1 action to complete before moving on to the next thing
+
+Example:
+
+- var article = readSync(article_log);
+    console.log(article);
+
+var authors = readSync(authors_loc);
+    console.log(authors);
+
+We wonder what happens if article_log is extremely large and takes 10 seconds to read(?)
+This way we would block our code right there. 
+
