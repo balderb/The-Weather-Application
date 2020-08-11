@@ -44,7 +44,29 @@ We said, though, that javascript only runs on 1 thread. And the distinction is t
 but requests such as "readAsync(article_log, function()" are handed off to a seperate threat which runs offside the javascript thread.
 that frees up the javascript of moving up to other things.
 
-Actually -> this is just one way to 
+Actually -> this is just one way to control the flow of this asynchronous request. There are definately other ways. 
+
+Let's look at these ways in this tutorial series.
+
+- Asynch Flow Control
+    - Callbacks = good
+    - Promises = better
+    - Generators = awesome
+
+let's take a look at the three of them! 
+
+#2 AJAX requests
+https://www.youtube.com/watch?v=h0ZUpPiV1ac&t=9s
+
+In this tutorial we will talk about how we actually go out and grab data. 
+And we do that by making AJAX requests. And 
+
+
+
+
+
+
+
 
 
 
