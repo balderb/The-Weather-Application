@@ -100,6 +100,46 @@ if(http.readyState == 4 && http.status == 200) {
 
 The best way to learn all of the details about fetch web API's is on the Mozilla Developer mdn web docs
 
+Start by claiming that the fetch() function is actually an API on itself.
+
+But first let's dive deeper into promises first and than go back to the fetch function
+
+https://www.youtube.com/watch?v=QO4NXhWo_NM
+
+** Javascript promises
+
+Promises are something native to how javascript works.
+So let's answer the questions: (1) why should we care about this and (2) what is a promise and (3) how do we make use of it.
+
+So the demonstration here, let's make requests for data from api's -> a request for a random word from the wordnik API and than we ask
+the giphy api for a gif associated to that particular word.
+
+So before we used a lot of callbacks using api's. A callback, though, really makes sense within this idea of an event.
+When the mouse is pressed, trigger this function = an event. 
+
+But if we want to sequence asynchronous things that happen in my program meaning we make a bunch of api requests and 
+asking for this and that, callbacks can get quite complex. and we can actually lose ourselves there. 
+
+what is a promise? it's an object. We have this loadJSON(url, callback);
+
+instead of the former, we can say something like this: < let promise = loadJSON(url); >
+
+The idea: instead of passing a function a callback, you ask a function for a promise. 
+
+Than we will replace 'loadJSON' with the function fetch() -> that supports promises. This will give us a promise called "promise"
+
+   
+
+
+
+
+
+
+
+
+** here we go back to this tutorial https://www.youtube.com/watch?v=tc8DU14qX6I
+
+
 There is this idea of making a 'request' = an http request or hypertext transfer protocol request.
 We could make a get request, saying like 'will you please -- could i please get some information. but
 we can also make a 'post request', could i please send you some information to you. Now we're gonna do 
@@ -138,6 +178,8 @@ So once we've done that, we've completed the data stream, we've got the image bl
 These 4 steps are the steps for this example and now we can just go and code this.
 
 1. Go work in 1 html and a js file, linked to that former html file.
+
+
 
 
  
