@@ -1,0 +1,201 @@
+
+** Stepwise
+
+We will work together (and explain) with the index.html file.
+
+we're gonna start writing javascript
+
+There's basically two ways of doing it. 
+We can use the Vanilla Javascript to do it + the JQuery way of making these requests.
+
+Let's start writing inside the async.js file
+
+
+example: var hhtp = new XMLHttpRequest();
+
+The "XMLHttpRequest" is an object which is supported in all modern browsers. It allows us to to an http request and get data back from a server.
+So, we are gonna be using it, ofcourse. And now it stored in the varable http.
+
+How do we make requests? -> by using a few different methods on this http variable now. 
+
+The first method: the open method. it sets up the request for us. It tells javascript where we want to get the data from + the type
+of request we want to make and whether we want it to be asynchronous or synchronous.
+
+the way we do this is by saying: http.open()
+
+And the first thing we need to pass in, is the type request. Which is gonna be the GET request. 
+
+http.open("GET")
+
+After that, we look at the data that we need (so pass through, the url of the data that we want to retrieve)), so in this case we're gonna look inside of our already created data folder.
+
+http.open("GET", "data/weather.json")
+
+The third parameter is the boolean where we tell wheather we want this to be synchronous or asynchronous.
+In this case we go for 'true' since we really want it to be asynchronous. and false if we want to make it synchronous.
+
+http.open("GET", "data/weather.json", true)
+
+Now we are going to add another method inside the async.js
+
+http.send();
+
+this "http.send();" is a method
+
+We ask it to prepare the data and bring it all the way back at us.
+
+Now, where is the data and what can we really do with it?
+
+To demonstrate it, let's log the 'http' object to the console. 
+to do that we do "console.log(http);"
+
+Now, this http object has been returned back to us, and this has a ready state of 1.
+Now, we do have different ready states of of this object, as we go through the ".send" request. 
+
+Remember from the file async.js in the comment section?
+
+/*  READY STATES
+
+0 - request not initialized
+1 - request has been set up
+2 - request has been sent
+3 - request is in process
+4 - request is complete
+
+*/
+
+Ready state 0 means that the request has not been initialized yet. etc..(we've got the object but it hasn't been initialized yet)
+Ready state 1 means it's been set up, like on line 37.
+Ready state 2
+Ready state 3
+Ready state 4 when the request is complete
+
+It is at point 4 that we can actually use the data that had been returned to us.
+
+So really what we want to do is listen for when the ready state is 4. What we want to do is listen out when these changes through the states are being made. 
+
+We can do that like this:
+
+http.onreadystatechange = function(){
+    console.log(http);
+};
+
+We'll do it and get 4 items back in the console.
+
+What we now want to do is put a listener on it for when the ready state has got value 4. And we can do that by giving it a 
+simple "if" check like this: 
+
+if(http.readyState == 4 && http.status == 200) {
+    if (http.readystate == 4 && http.status == 200) {
+        // here we'll do something with the data
+
+            console.log(JSON.parse(http.response));
+
+    }
+};
+
+
+// from here we switch to the code train on youtube
+// https://www.youtube.com/watch?v=tc8DU14qX6I
+
+The best way to learn all of the details about fetch web API's is on the Mozilla Developer mdn web docs
+
+Start by claiming that the fetch() function is actually an API on itself.
+
+But first let's dive deeper into promises first and than go back to the fetch function
+
+https://www.youtube.com/watch?v=QO4NXhWo_NM
+
+** Javascript promises
+
+Promises are something native to how javascript works.
+So let's answer the questions: (1) why should we care about this and (2) what is a promise and (3) how do we make use of it.
+
+So the demonstration here, let's make requests for data from api's -> a request for a random word from the wordnik API and than we ask
+the giphy api for a gif associated to that particular word.
+
+So before we used a lot of callbacks using api's. A callback, though, really makes sense within this idea of an event.
+When the mouse is pressed, trigger this function = an event. 
+
+But if we want to sequence asynchronous things that happen in my program meaning we make a bunch of api requests and 
+asking for this and that, callbacks can get quite complex. and we can actually lose ourselves there. 
+
+what is a promise? it's an object. We have this loadJSON(url, callback);
+
+instead of the former, we can say something like this: < let promise = loadJSON(url); >
+
+The idea: instead of passing a function a callback, you ask a function for a promise. 
+
+Than we will replace 'loadJSON' with the function fetch() -> that supports promises. This will give us a promise called "promise"
+
+   
+
+
+
+
+
+
+
+
+** here we go back to this tutorial https://www.youtube.com/watch?v=tc8DU14qX6I
+
+
+There is this idea of making a 'request' = an http request or hypertext transfer protocol request.
+We could make a get request, saying like 'will you please -- could i please get some information. but
+we can also make a 'post request', could i please send you some information to you. Now we're gonna do 
+both of these kind of requests and fetch can actually both retrieve and send. 
+
+But in this example we just want to look at a simple get request with fetch.
+
+Now, what is our program gonna do: 
+
+1. Call the fetch function + give it a singe argument which is the path of the resource.
+So in this case the path of the resource is gonna be a file, and the file is going to be a local file in this case, called weather.json
+like this: call fetch (weather.json);
+
+2 in the second thing we're gonna look at the response. This involved the idea of a promise. And fetch function is a 
+function that happens asynchronously, meaning we call fetch but some time passes because it takes some time to retrieve that data.
+So how we get the response as part of a promise is a detail that i'm going to have to look at specifically once we get into the code.
+
+The response is actually a stream of data. So we get the response but we need a whole other step, because we need to read
+that data to sort of like complete that data and store it in a format that we can work with.
+
+the format can be: text, blob(img), array buffer, JSON(javascript object notation)
+
+And that last format, the javaScript object notation is going to be a format for storing data that we're going to see again
+and again and again. But in this case, we want to get it as a blob.
+
+
+3. This third stepp we can call it the complete data stream. And what we mean with it is, to complete and grab the data
+that is in the body of the response. So this concept of the response body which is pretty important, which is where the data
+actually is. But it should be noted that there is lots of other metadata about the network communication that's in the response
+as well, that you could look at in certain circumstances.
+
+So once we've done that, we've completed the data stream, we've got the image blob 
+
+4 than we can just make an img html dom element with that data.
+
+These 4 steps are the steps for this example and now we can just go and code this.
+
+1. Go work in 1 html and a js file, linked to that former html file.
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

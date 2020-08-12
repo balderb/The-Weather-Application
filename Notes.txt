@@ -1,0 +1,96 @@
+I Create an account on OpenWeather, and generated a key
+
+*** notes on synchronous and asynchronous code
+
+https://www.youtube.com/watch?v=YxWMxJONp7E
+
+
+Javascript code runs on a single threat (can do 1 thing at a time)
+
+synchronous code waits for 1 action to complete before moving on to the next thing
+
+Example:
+
+- var article = readSync(article_log);
+    console.log(article);
+
+- var authors = readSync(authors_loc);
+    console.log(authors);
+
+We wonder what happens if article_log is extremely large and takes 10 seconds to read(?)
+This way we would block our code right there and it hangs there for that amount of time.
+To avoid that -> use asynchronous code to combat this.
+
+A better example: 
+
+- readAsync(article_log, function(){
+    console.log(article);
+});
+
+- readAsync(authors_log, function(){
+    console.log(authors);
+});
+
+In these examplex we go over more "asynchronous versions" of doing the -> very same thing.
+This time we use an api with a function called "readAsync" and this time it's gonna go and grab something asynchronously.
+
+What this is doing: perform some kind of "request" whereby it says: whe're gonna pass authors_log into 
+a seperate thread, you go out and get that data right now and than just carry on with my thread through the code
+and carry on to the next function. And when the article_log gets back and returns with the data, than we can fire this callback
+function right after it which is gonna log it to the article with console.log(article);
+
+So -> no longer are we waiting in line for "readAsync(article_log, function()" to be fully read before we move on to the next one.
+So what we do is pass the "article_log" on to a seperate thread and te code thread is moving on to the next function. 
+
+We said, though, that javascript only runs on 1 thread. And the distinction is this: javascript that you write only runs on one thread
+but requests such as "readAsync(article_log, function()" are handed off to a seperate threat which runs offside the javascript thread.
+that frees up the javascript of moving up to other things.
+
+Actually -> this is just one way to control the flow of this asynchronous request. There are definately other ways. 
+
+Let's look at these ways in this tutorial series.
+
+- Asynch Flow Control
+    - Callbacks = good
+    - Promises = better
+    - Generators = awesome
+
+let's take a look at the three of them! 
+
+#2 AJAX requests
+https://www.youtube.com/watch?v=h0ZUpPiV1ac&t=9s
+
+In this tutorial we will talk about how we actually go out and grab data. 
+And we do that by making AJAX requests. AJAX requests in 3 steps: 
+
+- Communicate with a server by making a http request
+- No need to reload the page
+- Stands for: "Asynchronous Javascript and XML"
+
+(own sidenote: let's look into the difference between AJAX and JSON at a later time)
+
+for example: map where you can zoom in our out, or plot things on it, that is probably gonna use AJAX
+HTTP request to update that map on the fly without ever having to refresh the page.
+
+So AJAX stands for Asynchronous JavaScript and XML. XML part is the data that we are retrieving.
+Although, honestly, we're probably gonna be using JSON these days which is a data fallout a lot more suited to javascript
+than xml is.
+
+How can we make http requests -> stepwise in notes2.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

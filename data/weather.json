@@ -1,0 +1,13 @@
+{
+"weather": [
+        {
+            "content": "degrees"
+        },
+ 
+        {
+            "content": "wind"
+        }
+    ]
+}
+
+
