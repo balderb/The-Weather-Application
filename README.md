@@ -7,4 +7,6 @@ I Create an account on OpenWeather, and generated a key
 
 Functionality: 
 
-- type a city and find out the local weather (degrees, wind, etc...)
+Type a city and find out the local weather (degrees, wind, etc...)
+
+* The website can be find here
