@@ -11,4 +11,4 @@ Type a city and find out the local weather (degrees, wind, etc...)
 
 * The website can be find here
 
-[The website can be find here](https://balderb.github.io/The-Weather-Application_balderb/)
+[The website can be found here](https://balderb.github.io/The-Weather-Application_balderb/)
